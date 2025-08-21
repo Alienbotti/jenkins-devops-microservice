@@ -12,7 +12,16 @@
 
 pipeline {
 	agent {docker {image 'maven:3.6.3'}} 
+	environment {
+		DOCKER_HOST = "tcp://host.docker.internal:2375"
+	}
     stages {
+		stage('Docker Test') {
+			steps {
+				sh 'docker version'
+				sh 'docker ps'
+			}
+		}
 		stage('Build') {
 			steps {
 				sh 'mvn --version'
