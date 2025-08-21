@@ -13,7 +13,7 @@
 pipeline {
 	agent {docker {image 'maven:3.6.3'}} 
 	environment {
-		DOCKER_HOST = "tcp://host.docker.internal:2375"
+		DOCKER_HOST = "tcp://dind:2375"
 	}
     stages {
 		stage('Docker Test') {
