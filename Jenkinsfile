@@ -11,17 +11,15 @@
 //Devlarative pipeline
 
 pipeline {
-	agent {docker {image 'maven:3.6.2'}} 
-	environment {
-		DOCKER_HOST = "tcp://dind:2375"
-	}
+	agent { docker { image 'maven:3.6.3'}}
+
     stages {
-		stage('Docker Test') {
-			steps {
-				sh 'docker version'
-				sh 'docker ps'
-			}
-		}
+		// stage('Docker Test') {
+		// 	steps {
+		// 		sh 'docker version'
+		// 		sh 'docker ps'
+		// 	}
+		// }
 		stage('Build') {
 			steps {
 				sh 'mvn --version'
