@@ -1,6 +1,9 @@
-FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-EXPOSE 8000
-ADD target/*.jar app.jar
-ENV JAVA_OPTS=""
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
+FROM jenkins/jenkins:lts
+
+USER root
+# Install Docker CLI inside Jenkins container
+RUN apt-get update && apt-get install -y docker.io \
+    && rm -rf /var/lib/apt/lists/*
+
+# Switch back to Jenkins user
+USER jenkins
