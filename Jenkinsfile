@@ -11,7 +11,7 @@
 //Devlarative pipeline
 
 pipeline {
-	agent {docker {image 'maven:3.6.3'}} 
+	agent {docker {image 'maven:3.6.2'}} 
 	environment {
 		DOCKER_HOST = "tcp://dind:2375"
 	}
