@@ -14,6 +14,8 @@
         <spring.boot.version>2.1.1.RELEASE</spring.boot.version>
         <groovy.version>4.0.24</groovy.version>
         <jacoco.version>0.8.12</jacoco.version>
+        <cucumber.version>7.14.0</cucumber.version>
+        <restassured.version>5.5.0</restassured.version>
     </properties>
 
     <dependencyManagement>
@@ -43,14 +45,14 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Jakarta Persistence API (needed for @Entity, @Id, @Column, etc.) -->
+        <!-- Jakarta Persistence API -->
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
             <version>3.1.0</version>
         </dependency>
 
-        <!-- Spring Boot Starter -->
+        <!-- Spring Boot Starter Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -70,7 +72,33 @@
             <version>${groovy.version}</version>
         </dependency>
 
-        <!-- Add your other dependencies here -->
+        <!-- ✅ Cucumber (latest, io.cucumber.*) -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ✅ RestAssured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -114,7 +142,7 @@
         </plugins>
     </build>
 
-    <!-- Make sure Maven Central is explicitly used -->
+    <!-- Ensure Maven Central is used -->
     <repositories>
         <repository>
             <id>central</id>
