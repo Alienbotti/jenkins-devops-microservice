@@ -12,7 +12,7 @@
     <properties>
         <java.version>21</java.version>
         <spring.boot.version>2.1.1.RELEASE</spring.boot.version>
-        <groovy.version>4.1.15</groovy.version>
+        <groovy.version>4.0.24</groovy.version>
         <jacoco.version>0.8.12</jacoco.version>
     </properties>
 
