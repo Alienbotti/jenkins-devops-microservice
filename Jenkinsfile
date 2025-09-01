@@ -12,7 +12,8 @@
 
 pipeline {
 	// agent { docker { image 'maven:3.6.3'}}
-	agent { docker { image 'node:latest'}}
+	// agent { docker { image 'node:latest'}}
+	agent any
 
     stages {
 
@@ -24,8 +25,14 @@ pipeline {
 		// }
 		stage('Build') {
 			steps {
-				sh 'node --version'
+				// sh 'node --version'
 				echo "Build"
+				echo "PATH -$PATH"
+				echo "Build_num -$env.BUILD_NUMBER"
+				echo "Build_id -$env.BUILD_ID"
+				echo "Job_name -$env.JOB_NAME"
+				echo "Build_Tag-$env.BUILD_TAG"
+				echo "Build_url- $env.BUILD_URL"
 			}
 		}
 
