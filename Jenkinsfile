@@ -15,6 +15,12 @@ pipeline {
 	// agent { docker { image 'node:latest'}}
 
     stages {
+		stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
 		stage('Docker Test') {
 			steps {
 				sh 'docker version'
