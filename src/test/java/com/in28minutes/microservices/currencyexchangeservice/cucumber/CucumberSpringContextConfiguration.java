@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.ContextConfiguration;
 
 import com.in28minutes.microservices.currencyexchangeservice.CurrencyExchangeServiceApplicationH2;
+import io.cucumber.spring.CucumberContextConfiguration;
 
 import io.cucumber.java.Before;
 
