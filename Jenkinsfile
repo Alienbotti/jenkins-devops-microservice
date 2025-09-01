@@ -11,16 +11,16 @@
 //Devlarative pipeline
 
 pipeline {
-	// agent { docker { image 'maven:3.6.3'}}
-	agent { docker { image 'node:latest'}}
+	agent { docker { image 'maven:3.6.3'}}
+	// agent { docker { image 'node:latest'}}
 
     stages {
-		// stage('Docker Test') {
-		// 	steps {
-		// 		sh 'docker version'
-		// 		sh 'docker ps'
-		// 	}
-		// }
+		stage('Docker Test') {
+			steps {
+				sh 'docker version'
+				sh 'docker ps'
+			}
+		}
 		stage('Build') {
 			steps {
 				sh 'node --version'
