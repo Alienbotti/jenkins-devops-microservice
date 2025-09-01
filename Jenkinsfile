@@ -45,14 +45,14 @@ pipeline {
 		}
 		stage ('Compile') {
 			steps {
-				sh "mvn clean compile "
+				sh "mvn clean compile -U"
 			}
 
 		}
 
 		stage('Test') {
 			steps {
-			   sh "mvn clean test -U"
+			   sh "mvn clean test"
 			}
 		}
 
